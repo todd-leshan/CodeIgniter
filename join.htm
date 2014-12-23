@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Join our community</title>
+<link href="join_files/main.css" rel="stylesheet" type="text/css">
+<script src="join_files/SpryValidationPassword.js" type="text/javascript"></script>
+<script src="join_files/SpryValidationConfirm.js" type="text/javascript"></script>
+<link href="join_files/SpryValidationPassword.css" rel="stylesheet" type="text/css">
+<link href="join_files/SpryValidationConfirm.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="hasCrumbs" id="wrapper">
+  <div id="header">
+    <h1><a href="http://explorecalifornia.org/index.htm" title="Return to the home page">Welcome to Explore California!</a></h1>
+  </div>
+  <div id="mainContent">
+    <h1 id="pageID">Explorers    </h1>
+    <div id="mainArticle">
+      <h1>Join the Explorers!</h1>
+    <p>Welcome to our community! As a part of the Explorers you'll 
+receive our monthly newsletter, weekly specials, and an opportunity to 
+write articles for the <a href="http://www.explorecalifornia.org/blog">Explorer's Journal</a> (our blog) and share trip photos in our<a href="http://explorecalifornia.org/explorers/gallery.htm"> photo gallery</a>!</p>
+    <p>After you sign up, we'll send out a membership kit. It contains 
+two free upgrade vouchers for your next tour and our super-secret 
+decoder ring. Use the decoder ring when you go on a two day or more 
+Explore California tour to unlock fantastic upgrades and optional tour 
+excursions. Hey, being a part of the community has its benefits. Worried
+ about privacy? Don't be, we never share your information with anyone. 
+Read our <a href="http://explorecalifornia.org/resources/privacy.htm">privacy</a> policy.</p>
+    <form id="frmJoin" name="frmJoin" method="post" action="join_process.php">
+      <fieldset>
+        <legend><strong>Personal Information</strong></legend>
+        <p>
+          <label for="first_name">First Name: <span class="required">[required]</span></label>
+          <input name="first_name" class="text" id="first_name" tabindex="10" type="text">
+        </p>
+        <p>
+          <label for="last_name">Last Name:<span class="required">[required]</span></label>
+          <input name="last_name" class="text" id="last_name" tabindex="20" type="text">
+        </p>
+        <p>
+          <label for="email">Email:<span class="required">[required]</span></label>
+          <input name="email" class="text" id="email" tabindex="30" type="text">
+        </p>
+        <p>
+          <label for="address1">Address:</label>
+          <input name="address1" class="text" id="address1" tabindex="40" type="text">
+        </p>
+        <p>
+          <label for="state">State:</label>
+          <select name="state" id="state" tabindex="50">
+                <option value="AL" selected="selected">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KA">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+          
+        </p>
+        <p>
+          <label for="zip_code">Zip Code:</label>
+          <input name="zip_code" class="text" id="zip_code" tabindex="60" type="text">
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend><strong>Login Information</strong></legend>
+        <p>
+          <label for="user_name">User Name:</label>
+          <input name="user_name" class="text" id="user_name" tabindex="70" type="text">
+        </p>
+        <p><span id="sprypassword1">
+        <label for="pwd">Password:</label>
+        <input autocomplete="off" name="pwd" class="text" id="pwd" tabindex="80" type="password">
+        <span class="passwordRequiredMsg">[required]</span><span class="passwordMinCharsMsg">[Must be at least 6 characters]</span></span></p>
+        <p><span id="spryconfirm1">
+          <label for="pwd_confirm">Confirm Password:</label>
+          <input autocomplete="off" name="pwd_confirm" class="text" id="pwd_confirm" tabindex="90" type="password">
+          <span class="confirmRequiredMsg">[required]</span><span class="confirmInvalidMsg">[mismatch, please try again]</span></span></p>
+      </fieldset>
+      <fieldset>
+        <legend><strong>Tour Profile</strong></legend>
+        <p class="subHead">I am interested in the following tours:</p>
+        <div class="col1">
+              <p>
+<input name="backpack" id="backpack" tabindex="110" type="checkbox">
+              <label for="backpack">Backpack Cal</label>
+</p>
+              <p>
+<input name="calm" id="calm" tabindex="120" type="checkbox">
+              <label for="calm">California Calm</label>
+</p>
+              <p>
+<input name="hotsprings" id="hotsprings" tabindex="130" type="checkbox">
+              <label for="hotsprings">California Hotsprings</label>
+</p>
+          </div>
+            <div class="col2">
+              <p>
+<input name="cycle" id="cycle" tabindex="140" type="checkbox">
+              <label for="cycle">Cycle California</label>
+</p>
+             <p>
+ <input name="desert" id="desert" tabindex="150" type="checkbox">
+              <label for="desert">From Desert to Sea</label>
+</p>
+             <p>
+ <input name="kids" id="kids" tabindex="160" type="checkbox">
+              <label for="kids">Kids California</label>
+</p>
+            </div>
+            <div class="col3">
+              <p>
+<input name="nature" id="nature" tabindex="170" type="checkbox">
+              <label for="nature">Nature Watch</label>
+</p>
+              <p>
+<input name="snowboard" id="snowboard" tabindex="180" type="checkbox">
+              <label for="snowboard">Snowboard Cali</label>
+</p>
+             <p>
+ <input name="taste" id="taste" tabindex="190" type="checkbox">
+              <label for="taste">Taste of California</label>
+</p>
+            </div>
+            <p class="subHead">How many Explore California tours have you been on?</p>
+            <p>
+              <label class="inline">
+                <input name="tours" value="0" id="tours_0" tabindex="200" type="radio">
+                none</label>
+              <label class="inline">
+                <input name="tours" value="few" id="tours_1" tabindex="210" type="radio">
+              1 - 3</label>
+              <label class="inline">
+                <input name="tours" value="strong" id="tours_2" tabindex="220" type="radio">
+              4 - 6</label>
+              <label class="inline">
+                <input name="tours" value="heavy" id="tours_3" tabindex="230" type="radio">
+              7 +</label>
+            </p>
+            <p>
+              <label for="profile" class="subHead">Profile Bio (tell us a little about yourself)</label>
+              <textarea name="profile" id="profile" cols="45" rows="5" tabindex="240"></textarea>
+            </p>
+            <p>
+              <input name="submit" id="submit" value="Join!" tabindex="260" type="submit">
+            </p>
+      </fieldset>
+    </form>
+    </div>
+  </div>
+  <div id="footer">
+  <div id="footerMenu">
+  <h3>Quick Nav</h3>
+    <ul id="quickNav">
+      <li><a href="http://explorecalifornia.org/tours.htm" title="Explore our tours">Tours</a></li>
+      <li><a href="http://explorecalifornia.org/mission.htm" title="What we think">Mission</a></li>
+      <li><a href="http://explorecalifornia.org/contact.htm" title="Contact and support">Contact</a></li>
+      <li><a href="http://explorecalifornia.org/resources.htm" title="Guidance and planning">Resources</a></li>
+      <li><a href="http://explorecalifornia.org/explorers.htm" title="Join our community">Explorers</a></li>
+    </ul>
+</div>
+  <div id="footerBody">
+  <div id="footerMidCol">
+      <h3><a href="http://explorecalifornia.org/resources/faq.htm">FAQ</a></h3>
+      <p>Find out more about our tours</p>
+      <h3><a href="http://explorecalifornia.org/contact.htm">Support</a></h3>
+      <p>Need help? It's just a click away!</p>
+      <h3><a href="http://explorecalifornia.org/explorers/join.htm">Legal Disclaimer</a></h3>
+    </div>
+    <div id="footerRightCol">
+      <h1>Explore California</h1>
+      <p>5605 Nota Street<br>
+        Ventura, CA 93003</p>
+      <p class="phone">866.555.4310</p>
+    </div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minChars:6, validateOn:["blur", "change"]});
+var spryconfirm1 = new Spry.Widget.ValidationConfirm("spryconfirm1", "pwd");
+</script>
+
+
+</body></html>
