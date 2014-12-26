@@ -41,7 +41,9 @@
 //$route['default_controller'] = "welcome";
 //now, we change the default controller to join
 //$route['default_controller'] = "join";
-$route['default_controller'] = "magzine";
+//$route['default_controller'] = "magzine";
+//$route['default_controller'] = "message";
+$route['default_controller'] = "login";
 $route['404_override'] = '';
 
 
