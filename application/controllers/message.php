@@ -13,6 +13,8 @@ class Message extends CI_Controller
 	{
 		if(isset($_SESSION['authorized']))
 		{
+			
+			unset($_SESSION['authorized']);
 			$data['title'] = 'Personal Profile';
 			$data['head'] = 'Welcome back!';
 			$this->load->view('message/header',$data);
@@ -59,7 +61,8 @@ class Message extends CI_Controller
 			//$this->load->view('message/info');
 			//$this->load->view('message/footer');
 			//$this->index();
-			header("Location:index.php");
+			//header("Location:index.php");
+			redirect('message','refresh');
 		}else
 		{
 			if(true)//log in successfully
