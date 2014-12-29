@@ -43,7 +43,8 @@
 //$route['default_controller'] = "join";
 //$route['default_controller'] = "magzine";
 //$route['default_controller'] = "message";
-$route['default_controller'] = "study/login/login";
+//$route['default_controller'] = "study/login/login";
+$route['default_controller'] = 'study1';
 $route['404_override'] = '';
 
 

@@ -14,7 +14,10 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+//default
+//$config['base_url']	= '';
+//study1-a full featured login and register system
+$config['base_url']	= 'http://localhost/mvc/CodeIgniter/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +227,10 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'REALLY_LONG_NUMBER';
+//default 
+//$config['encryption_key'] = 'REALLY_LONG_NUMBER';
+//
+$config['encryption_key'] = '!@#$%';
 
 /*
 |--------------------------------------------------------------------------
