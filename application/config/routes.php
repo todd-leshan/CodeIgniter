@@ -44,9 +44,11 @@
 //$route['default_controller'] = "magzine";
 //$route['default_controller'] = "message";
 //$route['default_controller'] = "study/login/login";
-$route['default_controller'] = 'study1';
+//$route['default_controller'] = 'blog';
+$route['default_controller'] = 'blog_controller';
 $route['404_override'] = '';
 
+//you can defind some string to make your urls shorter
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
