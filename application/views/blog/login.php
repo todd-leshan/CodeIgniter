@@ -17,5 +17,5 @@
 		</fieldset>
 	</form>	
 
-	<span class="info">Not a member? <a href="<?php echo site_url().'/blog-controller/register'; ?>">Sign up now!</a></span>
+	<span class="info">Not a member? <a href="<?php echo site_url().'/blog_controller/register_form'; ?>">Sign up now!</a></span>
 </div>

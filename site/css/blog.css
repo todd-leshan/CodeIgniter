@@ -118,3 +118,22 @@ legend
 {
 	color:white;
 }
+
+/***************************************************************************/
+/**register*/
+.register_form
+{
+	float:left;
+	width: 140px;
+}
+
+#submit_register
+{
+	float: right;
+}
+
+textarea.register
+{
+	width:169px;
+	height:100px;
+}
