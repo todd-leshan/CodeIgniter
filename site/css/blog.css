@@ -48,6 +48,7 @@ h1
 	width: 50%;
 	min-height: 640px;
 	margin: 1%;
+	padding: 5px;
 }
 
 #container3
@@ -59,7 +60,6 @@ h1
 .container
 {
 	float: left;
-	background-color: red;
 	padding: 5px;
 }
 
@@ -78,6 +78,16 @@ form
 a
 {
 	text-decoration: none;
+}
+
+form:after
+{
+	display:block;
+	clear:both;
+	content:".";
+	visibility:hidden;
+	height:0;
+	line-height:0;
 }
 /**************************************************************/
 /*login*/
@@ -136,4 +146,70 @@ textarea.register
 {
 	width:169px;
 	height:100px;
+}
+
+/****************************************************************/
+/*blog*/
+.blog-image
+{
+	height: 200px;
+	width: auto;
+}
+
+.blog_form
+{
+	float: left;
+	width: 100px;
+}
+
+textarea.blog
+{
+	width: 300px;
+	height: 100px;
+}
+
+#submitBlog
+{
+	width: 50px;
+	float: right;
+}
+
+#addNewBlog
+{
+	padding: 5px;
+}
+
+.comment_link
+{
+	text-align: right;
+}
+
+a.comment
+{
+	width:100%;
+	text-decoration: none;
+	color: #000000;
+}
+
+a.comment:hover,
+a.comment:active
+{
+	color: #FFFFFF;
+}
+
+/*div.blog:after
+{
+	display:block;
+	clear:both;
+	content:".";
+	visibility:hidden;
+	height:0;
+	line-height:0;
+}
+*/
+
+.blog
+{
+	max-height: 640px;
+	overflow: auto; 
 }

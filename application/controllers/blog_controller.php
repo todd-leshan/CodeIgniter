@@ -11,9 +11,12 @@ class Blog_controller extends CI_Controller
 
 	function index()
 	{
-		$data['title'] = "Todd's Blog";
+		$data['title'] = "Todd's Blog System";
 		$data['h1'] = 'Welcome - Login or Sign up';
 		$data['login_error'] = '';
+		
+		$this->load->model('blog/blog_model');
+
 		//$session = $this->session->all_userdata('error');
 		if(/*if logged in*/2>3)
 		{
@@ -23,13 +26,13 @@ class Blog_controller extends CI_Controller
 			$this->session->unset_userdata($session);
 		}else
 		{
-			$data['title'] = "Todd's Blog";
+			$data['title'] = "Todd's Blog System";
 			$data['h1'] = 'Welcome - Login or Sign up';
-			$data['body'] = '';
+			$data['body'] = $this->blog_model->getBlog();
 
 			$this->load->view('blog/header',$data);
 			$this->load->view('blog/login',$data);
-			$this->load->view('blog/main');
+			$this->load->view('blog/main',$data);
 			$this->load->view('blog/footer');
 		}
 		
@@ -53,7 +56,7 @@ class Blog_controller extends CI_Controller
 
 	function register_form()
 	{
-		$data['title'] = "Sign up with Todd's Blog";
+		$data['title'] = "Sign up with Todd's Blog System";
 		$data['h1'] = 'Sign up';
 		$data['login_error'] = '';
 		$data['register_error'] = '';
@@ -132,7 +135,7 @@ class Blog_controller extends CI_Controller
 
 		if($this->db->insert('users',$new_user))
 		{
-			echo 'done';
+			redirect('blog_controller/index','refresh');
 		}else
 		{
 			$data['title'] = "Sign up with Todd's Blog";
