@@ -1,5 +1,5 @@
 <div id="container1" class="container">
-	<form id="login" action="<?php echo site_url().'/blog_controller/login'?>" method="post">
+	<form id="login" action="<?php echo site_url().'/blog_controller/login'; ?>" method="post">
 		<fieldset>
 			<legend>Log In?</legend>
 			<span class="error"><?php echo $login_error; ?></span>

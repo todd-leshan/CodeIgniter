@@ -12,23 +12,51 @@ class User_model extends CI_Model
 
 	function login($username,$password)
 	{
+		$userInfo = $this->getUserByName($username);
+
+		$user = $userInfo[0];
+		$user = get_object_vars($user);
+		$salt = $user['salt'];
+
 		$limit = array(
 			'username'=>$username,
-			'password'=>sha1(md5($password))
+			'password'=>sha1(md5($password).$salt),
+			//'salt'    =>$salt,
 		);
 
 		$query = $this->db->get_where('users',$limit);
 
 		if($query->num_rows() == 1)
 		{
-			echo 'welcome';
+			//$this->load->controller('blog_controller');
+			//$this->blog_controller->user($username);
+			return true;
 		}else
 		{
-			$session = array('error','Invalid Username or Password!');
+			$session = array(
+				'login_error'=>'Invalid Username or Password!',
+			);
 			//$this->session->set_userdata('error','Invalid Username or Password!');
 			$this->session->set_userdata($session);
-			redirect(site_url(),'refresh');
+			//redirect(site_url(),'refresh');
+			return false;
 		}
+	}
+
+	function getUserByName($username)
+	{
+		$condition = array(
+			'username'=>$username,
+		);
+		$user = $this->db->get_where('users',$condition);
+		if($user->num_rows == 1)
+		{
+			return $user->result();
+		}else
+		{
+			echo 'error happened!';
+		}
+		
 	}
 }
 

@@ -30,6 +30,15 @@ class Blog_model extends CI_Model
 		return $blog->result();
 	}
 
+	function getBlogByUser($username)
+	{
+		$condition = array(
+			'username'=>$username,
+		);
+		$blog = $this->db->get_where('blog',$condition);
+		return $blog->result();
+	}
+
 	function getCommentByblogID($blogID)
 	{
 		$condition = array(

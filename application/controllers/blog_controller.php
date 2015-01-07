@@ -7,6 +7,8 @@ class Blog_controller extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->model('blog/blog_model');
+		$this->load->model('blog/user_model');
 	}
 
 	function index()
@@ -15,7 +17,6 @@ class Blog_controller extends CI_Controller
 		$data['h1'] = 'Welcome - Login or Sign up';
 		$data['login_error'] = '';
 		
-		$this->load->model('blog/blog_model');
 
 		//$session = $this->session->all_userdata('error');
 		if(/*if logged in*/2>3)
@@ -47,11 +48,53 @@ class Blog_controller extends CI_Controller
 			$password = $_POST['password'];
 
 			$this->load->model('blog/User_model');
-			$this->User_model->login($username,$password);
+			$login = $this->User_model->login($username,$password);
+
+			if($login>0)
+			{
+				$this->user($username);
+			}else
+			{
+				$this->index();
+			}
+
 		}else
 		{
-			$this->index();
+			//$this->index();
+			//check and login
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+
+			$this->load->model('blog/User_model');
+			$login = $this->User_model->login($username,$password);
+			if($login)
+			{
+				$this->user($username);
+			}else
+			{
+				$this->index();
+			}
 		}
+	}
+
+	function user($username)
+	{
+		$blogArray = $this->blog_model->getBlogByUser($username);
+		$user      = $this->user_model->getUserByName($username);
+
+		$userInfo = $user[0];
+		$data = array(
+			'title'    =>"Todd's Blog System",
+			'h1'       =>"Welcome back: $username",
+			'user'     =>$userInfo,
+			'body'     =>$blogArray,
+			'username' =>$username,
+		);
+
+		$this->load->view('blog/header',$data);
+		$this->load->view('blog/user',$data);
+		$this->load->view('blog/user_blog',$data);
+		$this->load->view('blog/footer');
 	}
 
 	function register_form()

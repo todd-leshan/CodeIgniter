@@ -239,3 +239,11 @@ a.comment:active
 {
 	padding: 5px;
 }
+
+/*****************************************************************/
+/*user information*/
+.user_image
+{
+	height: 150px;
+	width: auto;
+}
