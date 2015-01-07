@@ -89,6 +89,18 @@ form:after
 	height:0;
 	line-height:0;
 }
+
+.back_to_home
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.back_to_home:hover,
+.back_to_home:active
+{
+	color: #FFFFFF;
+}
 /**************************************************************/
 /*login*/
 #login
@@ -212,4 +224,18 @@ a.comment:active
 {
 	max-height: 640px;
 	overflow: auto; 
+}
+
+/************************************************************/
+/*blog and comment page*/
+
+#submitCom
+{
+	width: 50px;
+	float: right;
+}
+
+#addComment
+{
+	padding: 5px;
 }

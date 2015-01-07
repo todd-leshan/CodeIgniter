@@ -3,6 +3,8 @@
 <?php
 	if($body)
 	{
+		/*
+		//stupid way to reverse an array
 		$num_blog = sizeof($body);
 		$blogArray = array();
 		while($num_blog > 0)
@@ -10,7 +12,8 @@
 			array_push($blogArray,array_pop($body));
 			$num_blog--;
 		}
-
+		*/
+		$blogArray = array_reverse($body);
 		foreach($blogArray as $blog)
 		{
 			$blog    = get_object_vars($blog);
@@ -21,12 +24,11 @@
 			$date    = $blog['date'];
 			$user    = $blog['username'];
 ?>
-	<span>
+	<p>
 		<?php echo $user; ?>
 		&nbsp posted at&nbsp
 		<?php echo $date; ?>
-	</span>
-	<br>
+	</p>
 	<h3>
 		<?php echo $title; ?>
 	</h3>

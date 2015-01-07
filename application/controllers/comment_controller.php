@@ -6,20 +6,20 @@ class Comment_controller extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('blog/blog_model');
 	}
 
 	function blog_comment()
 	{
 		$blogID = $this->uri->segment(3);
 
-		$data['title']       = "Todd's Blog System";
-		$data['h1']          = 'Welcome!!!';
-		$data['login_error'] = '';
 		$data = array(
-			'error105'=>'No Comments found!',
+			'title'       =>"Todd's Blog System",
+			'h1'          =>'Welcome!!!',
+			'login_error' =>'',
+			'error105'    =>'No Comments found!',
 		);
 
-		$this->load->model('blog/blog_model');
 		$data['blogArray']    = $this->blog_model->getBlogByID($blogID);
 		$data['commentArray'] = $this->blog_model->getCommentByblogID($blogID);
 
@@ -28,6 +28,32 @@ class Comment_controller extends CI_Controller
 		$this->load->view('blog/blog',$data);
 		$this->load->view('blog/footer');
 
+	}
+
+	function addComment()
+	{
+		$blogID = $this->uri->segment(3);
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('username','*Username:','reim|required|xss_clean|max_length[30]');
+		$this->form_validation->set_rules('content','*Comment:','reim|required|xss_clean|max_length[200]');
+
+		if($this->form_validation->run()  == false)
+		{
+			$this->load->controller("comment_controller/blog_comment/$blogID");
+		}else
+		{
+			$username = $this->input->post('username');
+			$content  = $this->input->post('content');
+
+			$new_comment = array(
+				'content' =>$content,
+				'username'=>$username,
+				'blogID'  =>$blogID,
+			);
+
+			$this->blog_model->addComment($new_comment);
+		}
 	}
 }
 

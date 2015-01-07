@@ -38,6 +38,13 @@ class Blog_model extends CI_Model
 		$comment = $this->db->get_where('comment',$condition);
 		return $comment->result();
 	}
+
+	function addComment($new_comment)
+	{
+		$this->db->insert('comment',$new_comment);
+		$blogID = $new_comment['blogID'];
+		redirect("comment_controller/blog_comment/$blogID",'refresh');
+	}
 }
 
 ?>
